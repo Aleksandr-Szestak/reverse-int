@@ -1,16 +1,8 @@
 module.exports = function reverse (n) {
-    let maxSt = 0;  
     let a = Math.abs(n);
-    let c;
-    while (a>0){
-        c = a % 10;
-        a = (a-c) / 10;
-        maxSt++
-    }
-    
-    let r = 0;
-    let rez = 0;
-    a=Math.abs(n);
+    let maxSt = Math.floor(Math.log10(a))+1;  
+    let c = 0, r = 0, rez = 0;
+
     while (a>0){
         c = a % 10;
         a = (a-c) / 10;
@@ -18,6 +10,5 @@ module.exports = function reverse (n) {
         rez += c * (10 ** (maxSt-r));
     }
     
-    //return n>=0 ? rez : -rez;
     return rez;
-    }
+}
