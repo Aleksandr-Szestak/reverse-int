@@ -1,6 +1,6 @@
 module.exports = function reverse (n) {
     let a = Math.abs(n);
-    let maxSt = Math.floor(Math.log10(a))+1;  
+    let maxSt = Math.ceil(Math.log10(a));  
     let c = 0, r = 0, rez = 0;
 
     while (a>0){
